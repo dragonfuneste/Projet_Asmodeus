@@ -9,9 +9,10 @@
 #define FONCTION_SUP_PROGRAMMEPRINCIPALE_H_
 
 
+#include "Capteurs/Codeuse.h"
 
-#include "main.h"
-#include "stm32f4xx_hal.h"
+
+
 
 void Initialisation();
 void Programme_Principale();
