@@ -24,7 +24,6 @@ void Initialiser_UART(UART_HandleTypeDef *huart) {
 // Fonction générique pour envoyer des données via UART
 void UART_envoyer_donnees(void *data, int taille, char type) {
     int len = 0;
-
     for (int i = 0; i < taille; i++) {
         switch (type) {
             case 'l': // int32_t (long int)
