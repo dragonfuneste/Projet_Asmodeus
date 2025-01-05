@@ -9,8 +9,8 @@
 #define FONCTION_SUP_PROGRAMMEPRINCIPALE_H_
 
 
-#include "Capteurs/Codeuse.h"
-
+#include "Motorisation/Capteurs/Codeuse.h"
+#include "Motorisation/Moteur.h"
 
 
 

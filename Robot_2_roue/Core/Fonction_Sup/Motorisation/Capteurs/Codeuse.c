@@ -9,7 +9,7 @@
 
 int valeur_precedent [NOMBRE_CODEUSE]  = {0} ;
 int valeur_actuelle  [NOMBRE_CODEUSE]  = {0} ;
-int delta_position   [NOMBRE_CODEUSE]  = {0} ;
+int codeuse_position   [NOMBRE_CODEUSE]  = {0} ;
 
 
 void Initialisation_Codeuse()
@@ -27,18 +27,18 @@ void Update_Codeuse(int i, TIM_HandleTypeDef *htim)
     if (__HAL_TIM_IS_TIM_COUNTING_DOWN(htim) && (valeur_actuelle[i] > valeur_precedent[i]))
     {
     	// Overflow en décomptage
-    	delta_position[i] =  (valeur_actuelle[i]-OVERFLOW) - valeur_precedent[i];
+    	codeuse_position[i] =  (valeur_actuelle[i]-OVERFLOW) - valeur_precedent[i];
     }
     else
     {
     	if (!__HAL_TIM_IS_TIM_COUNTING_DOWN(htim) &&(valeur_actuelle[i] < valeur_precedent[i]))
     	{
     		//Overflow comptage
-    		delta_position[i] =  valeur_actuelle[i] - (valeur_precedent[i]-OVERFLOW);
+    		codeuse_position[i] =  valeur_actuelle[i] - (valeur_precedent[i]-OVERFLOW);
     	}
     	else
     	{
-    		delta_position[i] =  valeur_actuelle[i] - valeur_precedent[i];
+    		codeuse_position[i] =  valeur_actuelle[i] - valeur_precedent[i];
     	}
     }
     valeur_precedent[i]= valeur_actuelle[i];
