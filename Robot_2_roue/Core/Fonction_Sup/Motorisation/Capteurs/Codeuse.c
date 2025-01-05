@@ -10,7 +10,7 @@
 int valeur_precedent [NOMBRE_CODEUSE]  = {0} ;
 int valeur_actuelle  [NOMBRE_CODEUSE]  = {0} ;
 int codeuse_position   [NOMBRE_CODEUSE]  = {0} ;
-
+double codeuse_Vitesse	[NOMBRE_CODEUSE]  = {0} ;
 
 void Initialisation_Codeuse()
 {
@@ -43,6 +43,7 @@ void Update_Codeuse(int i, TIM_HandleTypeDef *htim)
     }
     valeur_precedent[i]= valeur_actuelle[i];
 
+    codeuse_Vitesse[i] = (codeuse_position[i] / (GAIN_CODEUSE*0.1));
 }
 
 

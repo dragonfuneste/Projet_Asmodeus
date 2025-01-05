@@ -12,6 +12,7 @@
 #include "Motorisation/Capteurs/Codeuse.h"
 #include "Motorisation/Moteur.h"
 #include "Communication/UART/UART.h"
+#include "Asservissement.h"
 
 extern TIM_HandleTypeDef htim9;
 

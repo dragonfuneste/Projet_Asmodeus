@@ -2,8 +2,7 @@
 
 
 
-// VALEUR INTERNE
-extern int codeuse_position [NOMBRE_CODEUSE] ;
+
 
 // FLAG
 int flag_interrupt = 0 ;
@@ -28,7 +27,7 @@ void Programme_Principale()
 		if (flag_interrupt)
 		{
 			flag_interrupt = 0 ;
-			UART_envoyer_donnees(codeuse_position, NOMBRE_CODEUSE, 'i');
+			Test_BO_Asserv(255,255);
 		}
 	}
 }
